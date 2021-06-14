@@ -20,7 +20,7 @@ class prime extends Thread
 {
 	public void run()
 	{
-		System.out.println("prime numbers");
+		System.out.println("...prime numbers...");
 		System.out.println("enter the limit");
 		Scanner s1= new Scanner(System.in);
 		int l=s1.nextInt();
