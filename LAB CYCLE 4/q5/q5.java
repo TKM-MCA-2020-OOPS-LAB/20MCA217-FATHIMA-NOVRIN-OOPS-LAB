@@ -8,7 +8,7 @@ class multiplication extends Thread
 	{
 		System.out.println("multipilcation table of 5");
 		int n=5;
-		for(int i=0;i<n;i++)
+		for(int i=1;i<=10;i++)
 		{
 			System.out.println(n+"*"+i+"="+n*i);
 			
