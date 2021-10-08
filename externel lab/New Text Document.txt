@@ -1,0 +1,138 @@
+package javalab;
+
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class traffic implements ActionListener {
+Frame f=new Frame();
+Button b1=new Button();
+Button b2=new Button();
+Button b3=new Button();
+
+traffic()
+{
+	b1.setBounds(100,100,200,100);
+	b1.setBackground(Color.red);
+	b2.setBounds(100,200,200,100);
+	b2.setBackground(Color.yellow);
+	b3.setBounds(100,300,200,100);
+	b3.setBackground(Color.green);
+	f.add(b1);
+	f.add(b2);
+	f.add(b3);
+	b1.addActionListener(this);
+	b2.addActionListener(this);
+	b3.addActionListener(this);
+	f.setLayout(null);
+	f.setVisible(true);
+	f.setSize(500,500);
+}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getSource()==b1){
+			int i = 0;
+		
+				
+			try {
+				
+				ArrayList<Integer> ar=new ArrayList<Integer>();
+				Scanner s=new Scanner(System.in);
+				
+				
+				System.out.println("enter the elemts");
+				int n=s.nextInt();
+				for(i=0; i<n;i++)
+				{
+					ar.add(i);
+					
+				}
+				System.out.println("elemnts are0"+ar);
+				
+		
+				
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		if(e.getSource()==b2){
+			
+			try {
+				int i=0;
+				if(i%2!=0){
+					FileInputStream fis= FileInputStream("C:\\Users\\Admin\\Documents\\exam\\file1.txt");
+
+				Reader fw=Reader("C:\\Users\\Admin\\Documents\\exam\\file1.txt",true);
+				BufferedReader bf=new BufferedReader(fw);
+				fw.close();
+				
+				FileWriter fr=new FileWriter("");
+				BufferedReader br=new BufferedReader(bf);
+				fr.close();
+				}
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		if(e.getSource()==b3){
+			int i = 0;
+		
+				
+			
+			try {
+				
+				Reader fw=Reader("C:\\Users\\Admin\\Documents\\exam\\file1.txt",true);
+				BufferedReader bf=new BufferedReader(fw);
+				fw.close();
+				
+				FileWriter fr=new FileWriter("");
+				BufferedReader br=new BufferedReader(bf);
+				System.out.println("data read from fle");
+				fr.close();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		
+	}
+
+
+private FileInputStream FileInputStream(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+private Reader Reader(String string, boolean b) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+private FileWriter FileWriter(String string, boolean b) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+public static void main(String args[])
+{
+	new traffic();
+}
+
+}
